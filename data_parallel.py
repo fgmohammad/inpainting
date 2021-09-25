@@ -38,16 +38,19 @@ class FullModel(nn.Module):
 def DataParallel_withLoss(model, extractor, args, **kwargs):
     model=FullModel(model, extractor, args)
     if 'device_ids' in kwargs.keys():
-        device_ids=kwargs['device_ids']
+      device_ids=kwargs['device_ids']
     else:
-        device_ids=None
+      device_ids=None
     if 'output_device' in kwargs.keys():
-        output_device=kwargs['output_device']
+      output_device=kwargs['output_device']
     else:
-        output_device=None
+      output_device=None
     if 'cuda' in kwargs.keys():
-        cudaID=kwargs['cuda'] 
-        model=torch.nn.DataParallel(model, device_ids=device_ids, output_device=output_device).cuda(cudaID)
+      cudaID=kwargs['cuda'] 
+      model=torch.nn.DataParallel(model, device_ids=device_ids, output_device=output_device).cuda(cudaID)
     else:
+      if torch.cuda.is_available():
         model=torch.nn.DataParallel(model, device_ids=device_ids, output_device=output_device).cuda()
+      else:
+        model=torch.nn.DataParallel(model, device_ids=device_ids, output_device=output_device)
     return model
