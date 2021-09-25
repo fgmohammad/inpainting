@@ -13,5 +13,5 @@ astropy 4.2
 Creates Binary masks of various shapes and sizes
 
 ## Usage
-### Training
-  $ python main_training.py --image_root image_root --masks_root mask_root --save_dir save_dir --batch_size batch_size
+### Training  
+$ python main_training.py --image_root image_root --masks_root mask_root --save_dir save_dir --batch_size batch_size
