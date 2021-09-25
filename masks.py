@@ -65,7 +65,6 @@ class CircleMask (Mask):
         assert (self.frac>0. and self.frac<1.)
         self.Xc = int(np.random.randint(self.radius, self.Dx-self.radius, 1))
         self.Yc = int(np.random.randint(self.radius, self.Dy-self.radius, 1))
-        #print (xc, yc, self.radius)
         
         self.mask = cv2.circle(self.mask, (self.Xc, self.Yc), self.radius, (1,0,0), thickness=-1)
         return np.array(1-self.mask, dtype=np.uint8)
@@ -89,7 +88,6 @@ class IrregularMask (Mask):
         assert (self.frac>0. and self.frac<1.)
         
         state_var = 0
-        
         while (state_var<self.area):
             x_in = int(np.random.randint(0, self.Dx, 1))
             y_in = int(np.random.randint(0, self.Dy, 1))
