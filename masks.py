@@ -1,10 +1,5 @@
 import numpy as np
-
 import cv2
-
-
-
-
 
 
 
@@ -21,7 +16,7 @@ class Mask (object):
 
 
 
-class RectangularMask (Mask):
+class RectangleMask (Mask):
     def __init__ (self, Dx, Dy, frac):
         """
         Create RectangularMask Object.
@@ -33,6 +28,7 @@ class RectangularMask (Mask):
         self.base = 0
         self.ratio = 1.2
         self.height = 0
+
     def __call__(self):
         """
         Place A Circle Mask Randomly Within [self.Dx,self.Dy] Image.
@@ -52,8 +48,7 @@ class RectangularMask (Mask):
 
 
 
-
-class CircularMask (Mask):
+class CircleMask (Mask):
     def __init__ (self, Dx, Dy, frac):
         """
         Create CircularMask Object.
@@ -62,6 +57,7 @@ class CircularMask (Mask):
         self.Xc = 0
         self.Yc = 0
         self.radius = int(np.sqrt(self.area/np.pi))
+
     def __call__(self):
         """
         Place A Circle Mask Randomly Within [self.Dx,self.Dy] Image.
@@ -76,7 +72,6 @@ class CircularMask (Mask):
 
     def __str__ (self):
         return f'Circular Binary Mask: [{self.Dx},{self.Dy}]'
-
 
 
 
@@ -115,9 +110,15 @@ class IrregularMask (Mask):
 
 
 
-
-
 if __name__ == '__main__':
-    circle = CircularMask(256, 256, 0.1)
-    mask = circle()
-    print (circle.Xc, circle.Yc)
+    circle = CircleMask(256, 256, 0.1)
+    mask_circle = circle()
+    print (circle)
+
+    rectangle = RectangleMask(256, 256, 0.1)
+    mask_rectangle = rectangle()
+    print (rectangle)
+    
+    irregular = IrregularMask(256, 256, 0.1)
+    mask_irregular = irregular()
+    print (irregular)
