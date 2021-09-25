@@ -1,7 +1,7 @@
 # Inpainting Cosmological Maps with Deep Learning 
 https://arxiv.org/abs/2109.07070
 
-#Requirements  
+## Requirements  
 Pytorch 1.9.0  
 python 3.8  
 numpy 1.20  
