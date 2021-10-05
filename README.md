@@ -22,5 +22,5 @@ Creates Binary masks of various shapes and sizes
 
 ### Results
 <p align="center">
-![results](/plots/maps_github.png)
+<img ![results](/plots/maps_github.png)>
 </p>
