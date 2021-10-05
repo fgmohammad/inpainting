@@ -21,6 +21,4 @@ Creates Binary masks of various shapes and sizes
   `$ python prediction.py --image_path image_path --mask_path mask_path --save_dir save_dir --model_path model_path`
 
 ### Results
-<p align="center">
-<img ![results](/plots/maps_github.png)>
-</p>
+![results](/plots/maps_github.png)
