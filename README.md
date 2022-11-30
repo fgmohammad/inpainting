@@ -15,10 +15,10 @@ Creates Binary masks of various shapes and sizes
 ## Usage
 ### Training  
 
-  `$ python main_training.py --image_root image_root --masks_root mask_root --save_dir save_dir --batch_size batch_size`  
+  `$ python main_training.py --image_root your_image_root --masks_root your_mask_root --save_dir your_save_dir --batch_size batch_size`  
 
 ### Prediction  
-  `$ python prediction.py --image_path image_path --mask_path mask_path --save_dir save_dir --model_path model_path`
+  `$ python prediction.py --image_path your_image_path --mask_path your_mask_path --save_dir your_save_dir --model_path model_path`
 
 ### Results
 ![results](/plots/maps_github.png)
